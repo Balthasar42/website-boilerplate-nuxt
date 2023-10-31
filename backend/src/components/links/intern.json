@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_links_interns",
+  "info": {
+    "displayName": "Intern",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  }
+}
