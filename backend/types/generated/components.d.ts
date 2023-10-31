@@ -34,12 +34,35 @@ export interface LinksIntern extends Schema.Component {
   };
 }
 
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'seo';
+    icon: 'search';
+    description: '';
+  };
+  attributes: {
+    metaTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    metaDescription: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    metaImage: Attribute.Media;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'layout.footer': LayoutFooter;
       'layout.navigation': LayoutNavigation;
       'links.intern': LinksIntern;
+      'shared.seo': SharedSeo;
     }
   }
 }
