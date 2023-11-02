@@ -8,7 +8,6 @@
   "scripts": {
     "dev": "lerna run dev --stream"
   },
-  "dependencies": {},
   "devDependencies": {
     "lerna": "7.4.1"
   }
