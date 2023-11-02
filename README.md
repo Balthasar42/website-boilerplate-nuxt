@@ -25,7 +25,7 @@
 
 ## Getting started
 
-1. Clone Repository
+1. Clone Repository or use github-template
 
 ```bash
   git clone https://github.com/Balthasar42/website-boilerplate-nuxt.git
