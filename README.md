@@ -20,6 +20,7 @@
 #### Plugins
 
 - [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs.
+- [NuxtStrapi](https://strapi.nuxtjs.org/) - first class integration with Strapi
 - [DevTools](https://github.com/nuxt/devtools) - unleash Nuxt Developer Experience.
 
 ## Getting started
