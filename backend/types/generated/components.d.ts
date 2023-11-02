@@ -5,9 +5,11 @@ export interface LayoutFooter extends Schema.Component {
   info: {
     displayName: 'Footer';
     icon: 'oneToMany';
+    description: '';
   };
   attributes: {
-    links: Attribute.Component<'links.intern', true>;
+    menuLinks: Attribute.Component<'links.intern', true>;
+    legalLinks: Attribute.Component<'links.intern', true>;
   };
 }
 
@@ -31,6 +33,31 @@ export interface LinksIntern extends Schema.Component {
   attributes: {
     title: Attribute.String;
     page: Attribute.Relation<'links.intern', 'oneToOne', 'api::page.page'>;
+  };
+}
+
+export interface SectionsContent extends Schema.Component {
+  collectionName: 'components_sections_contents';
+  info: {
+    displayName: 'content';
+    icon: 'cube';
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+  };
+}
+
+export interface SectionsHero extends Schema.Component {
+  collectionName: 'components_sections_heroes';
+  info: {
+    displayName: 'Hero';
+    icon: 'crown';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    image: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -62,6 +89,8 @@ declare module '@strapi/types' {
       'layout.footer': LayoutFooter;
       'layout.navigation': LayoutNavigation;
       'links.intern': LinksIntern;
+      'sections.content': SectionsContent;
+      'sections.hero': SectionsHero;
       'shared.seo': SharedSeo;
     }
   }

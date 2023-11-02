@@ -686,7 +686,7 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -708,7 +708,6 @@ export interface ApiGlobalGlobal extends Schema.SingleType {
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::global.global',
       'oneToOne',
@@ -762,6 +761,12 @@ export interface ApiPagePage extends Schema.CollectionType {
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sections: Attribute.DynamicZone<['sections.content', 'sections.hero']> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

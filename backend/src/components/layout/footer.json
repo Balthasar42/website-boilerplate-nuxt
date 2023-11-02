@@ -2,11 +2,17 @@
   "collectionName": "components_layout_footers",
   "info": {
     "displayName": "Footer",
-    "icon": "oneToMany"
+    "icon": "oneToMany",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "links": {
+    "menuLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.intern"
+    },
+    "legalLinks": {
       "type": "component",
       "repeatable": true,
       "component": "links.intern"

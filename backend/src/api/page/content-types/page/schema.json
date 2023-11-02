@@ -44,6 +44,18 @@
         }
       },
       "component": "shared.seo"
+    },
+    "sections": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "sections.content",
+        "sections.hero"
+      ]
     }
   }
 }
