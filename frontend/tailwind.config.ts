@@ -1,14 +1,14 @@
 import type { Config } from "tailwindcss"
-import { fontFamily } from "tailwindcss/defaultTheme"
+import theme from "tailwindcss/defaultTheme"
 
 export default <Partial<Config>>{
   theme: {
     extend: {
       fontFamily: {
-        ...fontFamily,
-        serif: ["Playfair Display", ...fontFamily.serif],
-        sans: ["Outfit", ...fontFamily.sans],
-        body: ["Outfit", ...fontFamily.sans],
+        ...theme.fontFamily,
+        serif: ["Playfair Display", ...theme.fontFamily.serif],
+        sans: ["Outfit", ...theme.fontFamily.sans],
+        body: ["Outfit", ...theme.fontFamily.sans],
       },
       colors: {
         "waikawa-gray": {
