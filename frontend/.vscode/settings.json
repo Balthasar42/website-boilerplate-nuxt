@@ -20,7 +20,7 @@
     "jsonc",
     "yaml"
   ],
-  // Tailwind settings 
+  // Tailwind settings
   "files.associations": {
     "*.css": "tailwindcss"
   },

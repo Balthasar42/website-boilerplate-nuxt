@@ -1,6 +1,6 @@
 <template>
   <footer>
-    FOOTER
+    <UContainer> FOOTER </UContainer>
     <!-- <div>
 
       <nav class="gap-6 flex">
@@ -17,14 +17,13 @@
 </template>
 
 <script lang="ts" setup>
+import type { PropType } from "vue"
 import type { LinksIntern } from "../../backend/types/generated/components"
-import type { PropType } from 'vue'
 
 defineProps({
   links: {
     type: Array as PropType<LinksIntern[]>,
-    default: () => null
-  }
+    default: () => null,
+  },
 })
-
 </script>

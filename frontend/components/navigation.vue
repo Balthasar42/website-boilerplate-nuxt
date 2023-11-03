@@ -1,35 +1,40 @@
 <template>
-  <div>
-    <div>
-      <NuxtLink href="/" class="inline-flex items-center text-2xl font-bold md:text-3xl" :aria-label="appName">
-        {{ appName }}
-      </NuxtLink>
-
-      <nav class="gap-6 flex">
-        <NuxtLink v-for="link in links" :to="link.page.data.attributes.slug">
-          {{ link.title || link.page.data.attributes.title }}
+  <div class="bg-white dark:bg-black">
+    <UContainer>
+      <header class="flex items-center justify-between py-4 md:py-8">
+        <NuxtLink
+          href="/"
+          class="inline-flex items-center text-2xl font-bold md:text-3xl"
+          :aria-label="appName"
+        >
+          {{ appName }}
         </NuxtLink>
-      </nav>
 
-      <!-- <pre>
-        {{ links }}
-      </pre> -->
-
-    </div>
+        <nav class="flex gap-6 text-opacity-25">
+          <NuxtLink
+            v-for="link in filteredLinks"
+            :key="link.id"
+            :to="link.page.data.attributes.slug"
+          >
+            {{ link.title || link.page.data.attributes.title }}
+          </NuxtLink>
+        </nav>
+      </header>
+    </UContainer>
   </div>
 </template>
 
-<script lang="ts" setup>
-// import type { LinksIntern } from "../../backend/types/generated/components"
-// import type { PropType } from 'vue'
-const appName = ref("Home");
+<script setup lang="ts">
+const appName = ref("Home")
 
-defineProps({
+const props = defineProps({
   links: {
-    // type: Array as PropType<LinksIntern[]>,
     type: Array as PropType<any[]>,
-    default: () => null
-  }
+    default: () => null,
+  },
 })
 
+const filteredLinks = computed(() =>
+  props.links.filter((link) => link.page.data),
+)
 </script>

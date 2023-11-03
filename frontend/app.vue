@@ -1,20 +1,21 @@
 <template>
   <Html lang="de" class="h-full">
-
-  <Body class="h-full">
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </Body>
-
+    <Body class="h-full">
+      <NuxtLayout>
+        <NuxtLoadingIndicator />
+        <NuxtPage />
+      </NuxtLayout>
+    </Body>
   </Html>
 </template>
 
 <script setup lang="ts">
-const appName = "Breeze";
+import { FALLBACK_SEO } from "@/utils/contants"
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - ${appName}` : appName;
-  }
+    return titleChunk
+      ? `${titleChunk} - ${FALLBACK_SEO.title}`
+      : FALLBACK_SEO.title
+  },
 })
 </script>
