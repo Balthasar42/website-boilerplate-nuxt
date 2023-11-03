@@ -10,7 +10,9 @@
     "preview": "nuxt preview",
     "start": "node .output/server/index.mjs",
     "start:generate": "npx serve .output/public",
-    "lint": "eslint .",
+    "lint:js": "eslint .",
+    "lint:prettier": "prettier --check .",
+    "lint:format": "prettier --write --list-different .",
     "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit"
   },
