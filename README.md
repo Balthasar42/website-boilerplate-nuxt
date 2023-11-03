@@ -16,6 +16,7 @@
 - ⚡️ Vite - Instant HMR
 - 🎨 [Tailwind](https://tailwindcss.com/) - A utility-first CSS framework
 - 🦾 Power of TypeScript
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) - Fixing and fast cleaning
 
 #### Plugins
 
