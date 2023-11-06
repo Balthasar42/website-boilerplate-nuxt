@@ -1,11 +1,7 @@
 <template>
-  <div>
-    {{ slug }}
-    <hr />
-    <pre>
-      {{ page }}
-    </pre>
-  </div>
+  <main>
+    <Sections :items="page.sections" />
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -23,16 +19,18 @@ const { data: page } = await useAsyncData(
       } else {
         return null
       }
-    },
-  },
+    }
+  }
 )
 
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
+  title: page.value?.seo?.metaTitle,
+  ogTitle: page.value?.seo?.metaTitle,
+  description: page.value?.seo?.metaDescription,
+  ogDescription: page.value?.seo?.metaDescription
 })
 
-// if (!page.value) {
-//   throw createError({ statusCode: 404 })
-// }
+if (!page.value) {
+  throw createError({ statusCode: 404 })
+}
 </script>

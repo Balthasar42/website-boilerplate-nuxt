@@ -1,19 +1,21 @@
 <template>
   <div>
-    <div v-if="pending">Loading...</div>
+    <div v-if="pending">
+      Loading...
+    </div>
 
     <Navigation :links="global?.navigation?.links" />
 
-    <main>
-      <!-- <pre>{{ global }}</pre> -->
-      <slot />
-    </main>
+    <!-- <pre>{{ global }}</pre> -->
+    <slot />
 
-    <!-- <Footer :links="global?.footer" /> -->
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
+import { FALLBACK_SEO } from "@/utils/contants"
+
 const { find } = useStrapi()
 const { data: global, pending } = await useAsyncData(
   "global",
@@ -23,8 +25,8 @@ const { data: global, pending } = await useAsyncData(
         "navigation.links",
         "navigation.links.page",
         "footer.links",
-        "footer.links.page",
-      ],
+        "footer.links.page"
+      ]
     }),
   {
     transform: (data: any) => {
@@ -33,7 +35,24 @@ const { data: global, pending } = await useAsyncData(
       } else {
         return null
       }
-    },
-  },
+    }
+  }
 )
+useHead({
+  htmlAttrs: {
+    lang: "en"
+  },
+  // link: [
+  //   {
+  //     rel: "icon",
+  //     type: "image/png",
+  //     href: "/favicon.png"
+  //   }
+  // ],
+  titleTemplate: (titleChunk) => {
+    return titleChunk
+      ? `${titleChunk} - ${FALLBACK_SEO.title}`
+      : FALLBACK_SEO.title
+  }
+})
 </script>

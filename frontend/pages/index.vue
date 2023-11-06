@@ -1,7 +1,11 @@
 <template>
-  <UContainer>
-    <h1 class="text-primary-400">Index</h1>
-  </UContainer>
+  <main>
+    <UContainer>
+      <h1 class="text-primary-400">
+        Index
+      </h1>
+    </UContainer>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -11,6 +15,6 @@ useSeoMeta({
   title: "Startpage",
   ogTitle: "Startpage",
   description: FALLBACK_SEO.description,
-  ogDescription: FALLBACK_SEO.description,
+  ogDescription: FALLBACK_SEO.description
 })
 </script>
