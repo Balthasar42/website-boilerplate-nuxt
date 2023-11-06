@@ -30,11 +30,20 @@ const appName = ref("Home")
 const props = defineProps({
   links: {
     type: Array as PropType<any[]>,
-    default: () => null,
-  },
+    default: () => null
+  }
 })
 
 const filteredLinks = computed(() =>
-  props.links.filter((link) => link.page.data),
+  props.links.filter(link => link.page.data)
 )
 </script>
+
+<style scoepd lang="postcss">
+nav{
+  .router-link-active,
+  .router-link-exact-active{
+    @apply text-primary-500;
+  }
+}
+</style>
