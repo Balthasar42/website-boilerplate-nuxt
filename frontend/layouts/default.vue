@@ -38,6 +38,7 @@ const { data: global, pending } = await useAsyncData(
     }
   }
 )
+
 useHead({
   htmlAttrs: {
     lang: "en"
