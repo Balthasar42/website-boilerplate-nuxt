@@ -12,7 +12,7 @@
 
 #### Features:
 
-- 💚 [Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, layout etc.
+- 💚 [Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, layout etc
 - ⚡️ Vite - Instant HMR
 - 🎨 [Tailwind](https://tailwindcss.com/) - A utility-first CSS framework
 - 🦾 Power of TypeScript
@@ -20,9 +20,9 @@
 
 #### Plugins
 
-- [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs.
+- [VueUse](https://github.com/vueuse/vueuse) - collection of useful composition APIs
 - [NuxtStrapi](https://strapi.nuxtjs.org/) - first class integration with Strapi
-- [DevTools](https://github.com/nuxt/devtools) - unleash Nuxt Developer Experience.
+- [DevTools](https://github.com/nuxt/devtools) - unleash Nuxt Developer Experience
 
 ## Getting started
 
