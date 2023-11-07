@@ -54,7 +54,8 @@
       "type": "dynamiczone",
       "components": [
         "sections.content",
-        "sections.hero"
+        "sections.hero",
+        "sections.features"
       ]
     }
   }

@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { SectionHero, SectionContent } from "#components"
+import { SectionHero, SectionContent, SectionFeatures } from "#components"
 
 const props = defineProps({
   items: {
@@ -26,6 +26,8 @@ function sectionRenderer (section: any, index: number) {
       return { type: SectionHero, index, data: section }
     case "sections.content":
       return { type: SectionContent, index, data: section }
+    case "sections.features":
+      return { type: SectionFeatures, index, data: section }
     default:
       return null
   }

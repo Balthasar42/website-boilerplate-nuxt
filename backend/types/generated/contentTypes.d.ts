@@ -759,7 +759,9 @@ export interface ApiHomeHome extends Schema.SingleType {
           localized: true;
         };
       }>;
-    sections: Attribute.DynamicZone<['sections.content', 'sections.hero']> &
+    sections: Attribute.DynamicZone<
+      ['sections.content', 'sections.hero', 'sections.features']
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -818,7 +820,9 @@ export interface ApiPagePage extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    sections: Attribute.DynamicZone<['sections.content', 'sections.hero']> &
+    sections: Attribute.DynamicZone<
+      ['sections.content', 'sections.hero', 'sections.features']
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

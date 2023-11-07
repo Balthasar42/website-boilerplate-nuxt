@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-interface HeroProps {
+interface SectionProps {
   id: string;
   title: string;
   description: string;
@@ -27,7 +27,7 @@ interface HeroProps {
 
 const props = defineProps({
   section: {
-    type: Object as PropType<HeroProps>,
+    type: Object as PropType<SectionProps>,
     default: () => null
   }
 })

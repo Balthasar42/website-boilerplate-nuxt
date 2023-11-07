@@ -8,6 +8,9 @@ const populate = {
       image: {
         fields: ["name", "url", "alternativeText", "caption", "width", "height", "formats"],
       },
+      features: {
+        populate: true
+      }
     },
   },
 };

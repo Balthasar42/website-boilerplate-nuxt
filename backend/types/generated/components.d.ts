@@ -1,5 +1,18 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ElementsFeature extends Schema.Component {
+  collectionName: 'components_elements_features';
+  info: {
+    displayName: 'Feature';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+    image: Attribute.Media;
+  };
+}
+
 export interface LayoutFooter extends Schema.Component {
   collectionName: 'components_layout_footers';
   info: {
@@ -48,6 +61,18 @@ export interface SectionsContent extends Schema.Component {
   };
 }
 
+export interface SectionsFeatures extends Schema.Component {
+  collectionName: 'components_sections_features';
+  info: {
+    displayName: 'Features';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    features: Attribute.Component<'elements.feature', true>;
+  };
+}
+
 export interface SectionsHero extends Schema.Component {
   collectionName: 'components_sections_heroes';
   info: {
@@ -86,10 +111,12 @@ export interface SharedSeo extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'elements.feature': ElementsFeature;
       'layout.footer': LayoutFooter;
       'layout.navigation': LayoutNavigation;
       'links.intern': LinksIntern;
       'sections.content': SectionsContent;
+      'sections.features': SectionsFeatures;
       'sections.hero': SectionsHero;
       'shared.seo': SharedSeo;
     }
