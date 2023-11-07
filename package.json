@@ -9,6 +9,6 @@
     "dev": "lerna run dev --stream"
   },
   "devDependencies": {
-    "lerna": "7.4.1"
+    "lerna": "7.4.2"
   }
 }
