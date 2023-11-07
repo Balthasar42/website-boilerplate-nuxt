@@ -28,18 +28,18 @@
 </template>
 
 <script setup lang="ts">
-const error = useError()
+// const { error} = useError()
+
+const props = defineProps({
+  error: Object
+})
 
 useSeoMeta({
-  title: error.value?.message,
-  ogTitle: error.value?.message
+  title: props.error?.message,
+  ogTitle: props.error?.message
   // description: error
   // ogDescription: error
 })
 
-const handleError = () => {
-  clearError({
-    redirect: "/"
-  })
-}
+const handleError = () => clearError({ redirect: "/" })
 </script>
