@@ -23,6 +23,9 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: resolve("assets/css/tailwind.css")
   },
+  colorMode: {
+    preference: "light"
+  },
   googleFonts: {
     download: true,
     preload: true,
