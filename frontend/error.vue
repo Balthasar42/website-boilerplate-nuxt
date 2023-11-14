@@ -3,14 +3,14 @@
     <section>
       <UContainer>
         <div class="prose">
-          <template v-if="error?.statusCode === 404">
+          <template v-if="is404">
             <h1>404!</h1>
             <p>Sorry, that page doesn't exist.</p>
           </template>
           <template v-else>
             <h1>Dang</h1>
             <p>
-              <strong>{{ error?.message }}</strong>
+              <strong>{{ message }}</strong>
             </p>
             <p>It looks like something broke.</p>
             <p>Sorry about that.</p>
@@ -33,6 +33,9 @@
 const props = defineProps({
   error: Object
 })
+
+const message = computed(() => String(props.error?.message || ""))
+const is404 = computed(() => props.error?.statusCode === 404 || message.value?.includes("404"))
 
 useSeoMeta({
   title: props.error?.message,
