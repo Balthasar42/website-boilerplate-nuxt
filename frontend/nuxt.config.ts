@@ -8,6 +8,9 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true
   },
+  app: {
+    pageTransition: { name: "page", mode: "out-in" }
+  },
   modules: [
     "@vueuse/nuxt",
     "@nuxt/ui",
