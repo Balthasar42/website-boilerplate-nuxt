@@ -5,8 +5,6 @@
     </div>
 
     <Navigation :links="global?.navigation?.links" />
-
-    <!-- <pre>{{ global }}</pre> -->
     <slot />
 
     <Footer />
