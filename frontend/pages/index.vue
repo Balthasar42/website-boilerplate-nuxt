@@ -24,8 +24,8 @@ const { data: home } = await useAsyncData(
 
 useSeoMeta({
   title: home.value?.seo?.metaTitle,
-  ogTitle: home.value?.seo?.metaTitle
-  // description: FALLBACK_SEO.description,
-  // ogDescription: FALLBACK_SEO.description
+  ogTitle: home.value?.seo?.metaTitle,
+  description: home.value?.seo?.metaDescription,
+  ogDescription: home.value?.seo?.metaDescription
 })
 </script>
