@@ -22,7 +22,7 @@
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/google-fonts": "3.0.2",
     "@nuxtjs/strapi": "1.9.3",
-    "@types/markdown-it": "13.0.5",
+    "@types/markdown-it": "13.0.6",
     "@typescript-eslint/parser": "6.10.0",
     "@vueuse/core": "10.5.0",
     "@vueuse/nuxt": "10.6.1",
