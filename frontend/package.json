@@ -15,7 +15,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/ui": "2.10.0"
+    "@nuxt/ui": "2.11.1"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
