@@ -10,6 +10,6 @@
     "build": "lerna run build --stream"
   },
   "devDependencies": {
-    "lerna": "7.4.2"
+    "lerna": "8.0.0"
   }
 }
